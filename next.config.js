@@ -1,4 +1,21 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {}
 
-module.exports = nextConfig
+const nextConfig = {
+    images: {
+      unoptimized: true
+    },
+    loaders: [
+      {
+        test: /\.mp4$/,
+        loader: 'file-loader',
+      },
+    ],
+  }
+  
+  module.exports = nextConfig
+  
+  const withVideos = require('next-videos')
+  
+  module.exports = withVideos()
+  
+  
