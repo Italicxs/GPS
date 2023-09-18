@@ -1,7 +1,7 @@
 "use client"
 
 
-  import { useState, useEffect, useCallback } from 'react';
+  import { useState, useEffect, useCallback, useRef, useMemo  } from 'react'
   import slide1 from '@/public/IDENTIFY.webp';
   import slide2 from '@/public/ANALYZE.webp';
   import slide3 from '@/public/DESIGNING.webp';
@@ -44,56 +44,61 @@
       },
     ];
     
-      const [currentIndex, setCurrentIndex] = useState(0);
-      const [touchStartX, setTouchStartX] = useState(null);
-      const [touchEndX, setTouchEndX] = useState(null);
-    
-      const prevSlide = useCallback(() => {
+    const touchStartXRef = useRef(null);
+    const touchEndXRef = useRef(null);
+  
+    const [currentIndex, setCurrentIndex] = useState(0);
+  
+    const prevSlide = useMemo(() => {
+      return () => {
         const isFirstSlide = currentIndex === 0;
         const newIndex = isFirstSlide ? slides.length - 1 : currentIndex - 1;
         setCurrentIndex(newIndex);
-      }, [currentIndex, slides.length]);
-    
-      const nextSlide = useCallback(() => {
+      };
+    }, [currentIndex, slides.length]);
+  
+    const nextSlide = useMemo(() => {
+      return () => {
         const isLastSlide = currentIndex === slides.length - 1;
         const newIndex = isLastSlide ? 0 : currentIndex + 1;
         setCurrentIndex(newIndex);
-      }, [currentIndex, slides.length]);
-    
-      useEffect(() => {
-        const handleTouchStart = (e: any) => {
-          setTouchStartX(e.touches[0].clientX);
-        };
-    
-        const handleTouchMove = (e: any) => {
-          setTouchEndX(e.touches[0].clientX);
-        };
-    
-        const handleTouchEnd = () => {
-          if (touchStartX && touchEndX) {
-            const touchDiff = touchStartX - touchEndX;
-            if (touchDiff > 50) {
-              nextSlide();
-            } else if (touchDiff < -50) {
-              prevSlide();
-            }
+      };
+    }, [currentIndex, slides.length]);
+  
+    useEffect(() => {
+      const handleTouchStart = (e: any) => {
+        touchStartXRef.current = e.touches[0].clientX;
+      };
+  
+      const handleTouchMove = (e: any ) => {
+        touchEndXRef.current = e.touches[0].clientX;
+      };
+  
+      const handleTouchEnd = () => {
+        if (touchStartXRef.current && touchEndXRef.current) {
+          const touchDiff = touchStartXRef.current - touchEndXRef.current;
+          if (touchDiff > 50) {
+            nextSlide();
+          } else if (touchDiff < -50) {
+            prevSlide();
           }
-    
-          setTouchStartX(null);
-          setTouchEndX(null);
-        };
-    
-        window.addEventListener('touchstart', handleTouchStart);
-        window.addEventListener('touchmove', handleTouchMove);
-        window.addEventListener('touchend', handleTouchEnd);
-          
-        return () => {
-          window.removeEventListener('touchstart', handleTouchStart);
-          window.removeEventListener('touchmove', handleTouchMove);
-          window.removeEventListener('touchend', handleTouchEnd);
-        };
-      }, [touchStartX, touchEndX, prevSlide, nextSlide]);
-    
+        }
+  
+        touchStartXRef.current = null;
+        touchEndXRef.current = null;
+      };
+  
+      window.addEventListener('touchstart', handleTouchStart);
+      window.addEventListener('touchmove', handleTouchMove);
+      window.addEventListener('touchend', handleTouchEnd);
+  
+      return () => {
+        window.removeEventListener('touchstart', handleTouchStart);
+        window.removeEventListener('touchmove', handleTouchMove);
+        window.removeEventListener('touchend', handleTouchEnd);
+      };
+    }, [touchStartXRef, touchEndXRef, prevSlide, nextSlide]);
+  
       const goToSlide = (slideIndex: any) => {
         setCurrentIndex(slideIndex);
       };

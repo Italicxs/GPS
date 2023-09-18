@@ -1,16 +1,24 @@
 "use client"
 
-import Link from "next/link";
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
+import dynamic from "next/dynamic";
+
+const Link = dynamic(() => import("next/link"));
+
 export default function Hero() {
 
-  const [scrollTo, setScrollTo] = useState  (null);
+  const [scrollTo, setScrollTo] = useState(null);
+  const targetElementRef = useRef(null);
 
   const handleClick = (event: any, targetId: any) => {
     event.preventDefault();
     setScrollTo(targetId);
 
-    const targetElement = document.getElementById(targetId);
+    const getTargetElement = () => {
+      return document.getElementById(targetId);
+    };
+
+    const targetElement = getTargetElement();
 
     if (targetElement) {
       targetElement.scrollIntoView({ behavior: "smooth" });
@@ -36,7 +44,7 @@ export default function Hero() {
             Efficiency at every connection: Discover our gas plumbing solutions.
           </p>
 
-          <Link href="#AboutUs" className="btn btn-primary" onClick={(event) => handleClick(event, "AboutUs")}>
+          <Link href="#AboutUs" className="btn btn-primary" onClick={(event) => handleClick(event, "AboutUs")} ref={targetElementRef}>
           <button className="bg-blue-500 text-white px-4 py-2 mt-4 rounded-sm text-sm sm:text-base md:text-lg lg:text-xl">
             Discover
           </button>
