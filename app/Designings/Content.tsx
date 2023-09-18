@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
-import Sketched from '@/public/Plumbing.jpg'
-import Implemented from '@/public/Plumbing-.jpg'
+import Sketched from '@/public/plumbing.webp'
+import Implemented from '@/public/Plumbing-.webp'
 
 export default function Content(){
     return(

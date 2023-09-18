@@ -25,7 +25,7 @@ export default function Hero() {
         muted
         className="absolute inset-0 object-cover w-full h-full"
       >
-        <source src={require('@/public/assets/hero.video.mp4')} type="video/mp4" />
+        <source src={require('@/public/assets/hero-bg.webm')} type="video/webm" />
       </video>
       <div className="absolute inset-0 flex items-center justify-center">
         <div className="space-y-5 bg-transparent w-full p-4 text-center text-white">

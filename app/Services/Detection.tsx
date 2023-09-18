@@ -1,5 +1,5 @@
 import Image from "next/image";
-import mpContent from "@/public/Card 2.jpg";
+import mpContent from "@/public/card-2.webp";
 
 export default function Detection() {
   return (

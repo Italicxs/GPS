@@ -1,40 +1,49 @@
-  "use client"
+"use client"
+
 
   import { useState, useEffect, useCallback } from 'react';
+  import slide1 from '@/public/IDENTIFY.webp';
+  import slide2 from '@/public/ANALYZE.webp';
+  import slide3 from '@/public/DESIGNING.webp';
+  import slide4 from '@/public/VALIDATE.webp';
+  import slide5 from '@/public/IMPLEMENT.webp';
+  import slide6 from '@/public/EXECUTE.webp';
+
 
   export default function HowWeWork(){
-      const slides = [
-          {
-            url: 'https://images.unsplash.com/photo-1639600993675-2281b2c939f0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-            title: 'IDENTIFY',
-            description: 'Our gas plumbing experts uncover hidden problems and provide accurate solutions. Every detail counts, trust us!',
-          },
-          {
-            url: 'https://images.pexels.com/photos/586019/pexels-photo-586019.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-            title: 'ANALYZE',
-            description: 'Skilled at analyzing complex gas networks, we solve problems and understand their source. We guarantee solid and lasting solutions.',
-          },
-          {
-              url: 'https://images.pexels.com/photos/271667/pexels-photo-271667.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-              title: 'DESIGN',
-              description: 'In gas plumbing, our team creates innovative and functional systems. Safety and performance are central to our design.',
-          },
-          {
-          url: 'https://www.stockvault.net/data/2007/03/01/97235/preview16.jpg',
-          title: 'VALIDATE',
-          description: 'We validate every step of the way with extensive testing and uncompromising standards. Our seal of quality gives you confidence.',
-          },
-          {
-          url: 'https://images.unsplash.com/photo-1523726491678-bf852e717f6a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-          title: 'IMPLEMENT',
-          description: 'We transform ideas into reality, implementing solutions that change gas-fired plumbing. Innovation comes to life in our projects.',
-          },
-          {
-          url: 'https://images.pexels.com/photos/4063198/pexels-photo-4063198.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-          title: 'EXECUTE',
-          description: 'We are unmatched in executing every task with surgeon-like precision. Every action is a step toward your well-being and peace of mind.',
-          }
-      ]
+    const slides = [
+      {
+        image: slide1,
+        title: 'IDENTIFY',
+        description: 'Our gas plumbing experts uncover hidden problems and provide accurate solutions. Every detail counts, trust us!',
+      },
+      {
+        image: slide2,
+        title: 'ANALYZE',
+        description: 'Skilled at analyzing complex gas networks, we solve problems and understand their source. We guarantee solid and lasting solutions.',
+      },
+      {
+        image: slide3,
+        title: 'DESIGN',
+        description: 'In gas plumbing, our team creates innovative and functional systems. Safety and performance are central to our design.',
+      },
+      {
+        image: slide4,
+        title: 'VALIDATE',
+        description: 'We validate every step of the way with extensive testing and uncompromising standards. Our seal of quality gives you confidence.',
+      },
+      {
+        image: slide5,
+        title: 'IMPLEMENT',
+        description: 'We transform ideas into reality, implementing solutions that change gas-fired plumbing. Innovation comes to life in our projects.',
+      },
+      {
+        image: slide6,
+        title: 'EXECUTE',
+        description: 'We are unmatched in executing every task with surgeon-like precision. Every action is a step toward your well-being and peace of mind.',
+      },
+    ];
+    
       const [currentIndex, setCurrentIndex] = useState(0);
       const [touchStartX, setTouchStartX] = useState(null);
       const [touchEndX, setTouchEndX] = useState(null);
@@ -88,7 +97,6 @@
       const goToSlide = (slideIndex: any) => {
         setCurrentIndex(slideIndex);
       };
-    
         return (
           
           <div>
@@ -99,10 +107,13 @@
             </div>
             <div className="max-w-screen-xl mx-auto flex flex-col lg:flex-row lg:space-x-8 p-3">
               <div className="lg:w-2/3 relative">
-                <div
-                  style={{ backgroundImage: `url(${slides[currentIndex].url})`, transition: 'background-image 1s ease-in-out' }}
-                  className="w-full h-80 lg:h-[300px] rounded-xl bg-center bg-cover"
-                  ></div>
+              <div
+                style={{
+                  backgroundImage: `url(${JSON.stringify(slides[currentIndex].image.src)})`,
+                  transition: 'background-image .5s ease-in-out',
+                }}
+                className="w-full h-80 lg:h-[300px] rounded-xl bg-center bg-cover"
+              ></div>
               <div
                 className="hidden lg:block absolute top-1/2 -translate-y-1/2 left-5 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer"  
                 onClick={prevSlide}

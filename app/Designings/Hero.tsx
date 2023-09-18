@@ -1,4 +1,4 @@
-import bgDesign from '@/public/Hero3D.png';
+import bgDesign from '@/public/Hero3D.webp';
 import Image from 'next/image';
 
 

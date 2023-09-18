@@ -1,5 +1,5 @@
 import Image from "next/image";
-import mpContent from "@/public/GasSystem.png";
+import mpContent from "@/public/GasSystem.webp";
 
 export default function GasInstallation() {
   return (

@@ -2,7 +2,7 @@
 
     import React, { useState, useEffect } from 'react';
     import Image from 'next/image';
-    import mpContent from '@/public/MapImg.jpg'
+    import mpContent from '@/public/mapimg.webp'
     import Link from 'next/link';
 
     const textData = [
@@ -58,9 +58,9 @@
             <div className="flex flex-wrap items-center">
             <div className="w-full md:w-1/2 mt-4 md:mt-0 md:max-w-md mx-auto sm:w-full sm:max-w-full">
                 <div className="bg-white p-4 rounded-sm shadow-md relative">
-                <Image src={mpContent} alt="Map" layout="responsive" />
+                <Image src={mpContent} alt="Map" objectFit="contain" objectPosition="center" />
                 {textData.map((item, index) => (
-                    <svg viewBox="0 0 512 512" fill="#ffbe0b" key={index}onClick={() => handleIconClick(index)} width="30" height="30"
+                    <svg viewBox="0 0 512 512" fill="#ffbe0b" key={index} onClick={() => handleIconClick(index)} width="30" height="30"
                     style={{
                         position: 'absolute',
                         left: iconCoordinates[index].x + 'px',

@@ -1,5 +1,5 @@
 import Image from "next/image";
-import mpContent from "@/public/Analytics.jpg";
+import mpContent from "@/public/analytics.webp";
 
 export default function Analysis() {
   return (

@@ -3,9 +3,9 @@
 import React, { useState } from "react";
 import Link from "next/link";
 
-import CardOne from '@/public/GasInstallationCard.png'
-import CardTwo from '@/public/ModelingCard.png'
-import CardThree from '@/public/DesignCard.png'
+import CardOne from '@/public/GasInstallationCard.webp'
+import CardTwo from '@/public/ModelingCard.webp'
+import CardThree from '@/public/DesignCard.png.webp'
 import Image from "next/image";
 
 

@@ -1,5 +1,5 @@
 import Image from "next/image";
-import mpContent from "@/public/Stove.jpg";
+import mpContent from "@/public/Stove.webp";
 import Link from "next/link";
 
 export default function Installation() {

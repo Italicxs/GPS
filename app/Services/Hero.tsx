@@ -1,4 +1,4 @@
-import bgServices from '@/public/Services.jpg';
+import bgServices from '@/public/Services.webp';
 import Image from 'next/image';
 
 

@@ -1,5 +1,5 @@
 import Image from "next/image";
-import mpContent from "@/public/mapacontent.png";
+import mpContent from "@/public/mapacontent.png.webp";
 
 export default function WhoAre() {
   return (
@@ -19,10 +19,11 @@ export default function WhoAre() {
 
           <div className="w-full md:w-1/2 mt-4 md:mt-0 md:max-w-md mx-auto sm:mx-0">
             <div className="bg-white p-4 rounded-sm shadow-md">
-              <Image
+            <Image
                 src={mpContent}
                 alt="Map"
-                layout="responsive"
+                objectFit="contain"
+                objectPosition="center"
               />
             </div>
           </div>

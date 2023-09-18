@@ -1,4 +1,4 @@
-import bgCompany from '@/public/Hero-Company.jpg';
+import bgCompany from '@/public/hero-company.webp';
 import Image from 'next/image';
 
 

@@ -1,5 +1,5 @@
 import Image from "next/image";
-import mpContent from "@/public/Mainteinance.png";
+import mpContent from "@/public/Mainteinance.webp";
 
 export default function Mainteinance() {
   return (

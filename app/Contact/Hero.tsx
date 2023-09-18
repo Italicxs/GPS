@@ -1,4 +1,4 @@
-import bgContact from '@/public/Hero-Contact.jpg';
+import bgContact from '@/public/hero-contact.webp';
 import Image from 'next/image';
 
 

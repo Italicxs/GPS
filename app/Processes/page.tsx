@@ -1,4 +1,4 @@
-import bgProcesses from '@/public/Processes.jpg';
+import bgProcesses from '@/public/Processes.webp';
 import Image from 'next/image';
 import Form from '@/app/Contact/ContactForm'
 

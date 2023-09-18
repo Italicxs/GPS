@@ -1,5 +1,5 @@
 import Image from "next/image";
-import mpContent from "@/public/Design.png";
+import mpContent from "@/public/Design.webp";
 
 export default function Plans() {
   return (
