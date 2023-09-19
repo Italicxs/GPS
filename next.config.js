@@ -10,7 +10,9 @@ const nextConfig = {
       loader: 'file-loader',
     },
   ],
-  compress: true,
+  compress: {
+    level: 9,
+  },
 };
 
 module.exports = nextConfig;
