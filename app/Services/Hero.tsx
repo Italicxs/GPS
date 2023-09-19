@@ -8,7 +8,7 @@ export default function Hero() {
         <Image
           src={bgServices}
           alt="Descripción de la imagen"
-          layout="fill"
+          fill
           objectFit="cover"
           objectPosition="center"
         />

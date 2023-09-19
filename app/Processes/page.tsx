@@ -9,7 +9,7 @@ export default function Processes(){
         <Image
           src={bgProcesses}
           alt="Descripción de la imagen"
-          layout="fill"
+          fill
           objectFit="cover"
           objectPosition="center"
         />

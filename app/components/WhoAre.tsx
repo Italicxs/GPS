@@ -3,7 +3,7 @@ import mpContent from "@/public/mapacontent.png.webp";
 
 export default function WhoAre() {
   return (
-    <div className="bg-white py-10">
+    <div className="bg-white py-10 p-3">
       <div className="container mx-auto text-center">
         <h1 className=" -xl font-light lg:text-2xl mb-4 text-black uppercase">WHERE WE ARE</h1>
         <div className="flex flex-wrap items-center">
@@ -22,8 +22,7 @@ export default function WhoAre() {
             <Image
                 src={mpContent}
                 alt="Map"
-                objectFit="contain"
-                objectPosition="center"
+                className="object-contain object-center"
               />
             </div>
           </div>

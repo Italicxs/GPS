@@ -8,9 +8,8 @@ export default function Hero() {
         <Image
           src={bgContact}
           alt="Descripción de la imagen"
-          layout="fill"
-          objectFit="cover"
-          objectPosition="center"
+          fill
+          className="object-cover object-center"
         />
         <div className="absolute inset-0 flex items-center text-white bg-opacity-30 backdrop-blur-lg pl-4">
         <h2 className="text-4xl font-light   mb-4">Get in touch

@@ -68,39 +68,43 @@ export default function HowWeHelp() {
   };
 
   return (
-    <div className="bg-gray-100 py-10">
-      <div className="container mx-auto text-center">
-        <h1 className="text-xl font-light mb-4 text-black uppercase">HOW WE CAN HELP</h1>
-        <h3 className="text-2xl font-semibold mb-4 text-black/60 uppercase">OUR AREAS OF EXPERTISE</h3>
-        <div className="flex flex-wrap items-center">
-          <div className="w-full md:w-1/2 mt-4 md:mt-0 md:max-w-md mx-auto sm:w-full sm:max-w-full">
-            <div className="bg-white p-4 rounded-sm shadow-md relative">
-              <Image src={mpContent} alt="Map" objectFit="contain" objectPosition="center" />
-              {renderIcons()}
-            </div>
-          </div>
+<div className="bg-gray-100 py-10">
+  <div className="container mx-auto text-center p-3">
+    <h1 className="text-lg text-black lg:text-2xl font-light mb-4 uppercase">HOW WE CAN HELP</h1>
+    <h3 className="text-2xl font-semibold mb-4 text-black/60 uppercase">OUR AREAS OF EXPERTISE</h3>
+    <div className="flex flex-wrap items-center">
+      <div className="md:w-1/2 mt-4 md:max-w-md mx-auto relative">
+        <Image
+          src={mpContent}
+          alt="Map"
+          className="object-contain max-w-full h-auto rounded-sm"
+          sizes="(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 800px"
+        />
+        {renderIcons()}
+      </div>
 
-          <div className="w-full md:w-1/2 md:pl-8 mt-4 sm:mt-8">
-            {selectedPoint !== null && (
-              <div className="text-black">
-                <h2 className="text-2xl font-semibold text-black/60 uppercase">
-                  {textData[selectedPoint].title}
-                </h2>
-                <ul className="lg:text-xl sm:text-lg text-left mt-4 p-3">
-                  {textData[selectedPoint].description.map((desc, index) => (
-                    <li key={index}>{desc}</li>
-                  ))}
-                </ul>
-              </div>
-            )}
+      <div className="w-full sm:w-full sm:pl-0 md:w-1/2 md:pl-8">
+        {selectedPoint !== null && (
+          <div className="text-black">
+            <h2 className="text-2xl font-semibold text-black/60 uppercase sm:text-center">
+              {textData[selectedPoint].title}
+            </h2>
+            <ul className="lg:text-xl sm:text-lg text-left mt-4">
+              {textData[selectedPoint].description.map((desc, index) => (
+                <li key={index}>{desc}</li>
+              ))}
+            </ul>
           </div>
-        </div>
-        <Link href="/Services">
-          <button className="bg-blue-500 text-white px-4 py-2 mt-10 rounded-lg text-sm sm:text-base md:text-lg lg:text-xl">
-            Read more
-          </button>
-        </Link>
+        )}
       </div>
     </div>
+    <Link href="/Services">
+      <button className="bg-blue-500 text-white px-4 py-2 mt-10 rounded-lg text-sm sm:text-base md:text-lg lg:text-xl">
+        Read more
+      </button>
+    </Link>
+  </div>
+</div>
+
   );
 }

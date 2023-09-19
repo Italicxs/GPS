@@ -20,7 +20,7 @@ export default function Detection() {
                 <Image
                   src={mpContent}
                   alt="Map"
-                  layout="fill"
+                  fill
                   objectFit="cover"
                   className="rounded-sm"
                 />

@@ -13,7 +13,7 @@ export default function Plans() {
                 <Image
                   src={mpContent}
                   alt="Map"
-                  layout="fill"
+                  fill
                   objectFit="cover"
                   className="rounded-sm"
                 />

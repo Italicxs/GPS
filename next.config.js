@@ -1,21 +1,20 @@
 /** @type {import('next').NextConfig} */
 
 const nextConfig = {
-    images: {
-      unoptimized: true
+  images: {
+    unoptimized: true,
+  },
+  loaders: [
+    {
+      test: /\.mp4$/,
+      loader: 'file-loader',
     },
-    loaders: [
-      {
-        test: /\.mp4$/,
-        loader: 'file-loader',
-      },
-    ],
-  }
-  
-  module.exports = nextConfig
-  
-  const withVideos = require('next-videos')
-  
-  module.exports = withVideos()
-  
-  
+  ],
+  compress: true,
+};
+
+module.exports = nextConfig;
+
+const withVideos = require('next-videos');
+
+module.exports = withVideos();
