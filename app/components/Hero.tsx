@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useState } from "react";
+import React, { useState, useEffect    } from "react";
 import dynamic from "next/dynamic";
 
 const Link = dynamic(() => import("next/link"));
@@ -8,6 +8,7 @@ const Link = dynamic(() => import("next/link"));
 export default function Hero() {
 
   const [scrollTo, setScrollTo] = useState(null);
+  const [isClient, setIsClient] = useState(false)
 
   const handleClick = (event: any, targetId: any) => {
     event.preventDefault();
@@ -23,18 +24,21 @@ export default function Hero() {
       targetElement.scrollIntoView({ behavior: "smooth" }); 
     }
   };
-
+  
+  useEffect(() => { setIsClient(true) }, [])  
+  
   return (
     <div className="relative min-h-[900px]">
+      { isClient &&
       <video
         autoPlay
         loop
         muted
         playsInline 
         className="absolute inset-0 object-cover w-full h-full"
-      >
+      > 
         <source src={require('@/public/assets/hero-bg.webm')} type="video/webm" />
-      </video>
+      </video>}
       <div className="absolute inset-0 flex items-center justify-center">
         <div className="space-y-5 bg-transparent w-full p-4 text-center text-white">
           <h2 className="text-2xl sm:text-4xl lg:text-6xl font-bold uppercase">

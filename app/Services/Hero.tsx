@@ -13,7 +13,7 @@ export default function Hero() {
           objectPosition="center"
         />
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white bg-opacity-30 backdrop-blur-lg">
-          <h2 className="text-4xl font-medium mb-4 uppercase">WE ARE EXPERTS IN</h2>
+          <h2 className="text-4xl font-light mb-4 uppercase">WE ARE EXPERTS IN</h2>
         </div>
       </div>
     );
