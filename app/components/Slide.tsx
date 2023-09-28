@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 
 interface SlideProps {
   slide: {
@@ -11,7 +12,7 @@ interface SlideProps {
 const Slide: React.FC<SlideProps> = ({ slide }) => {
   return (
     <div className="slide">
-      <img src={slide.image} alt={slide.title} />
+      <Image src={slide.image} alt={slide.title}></Image>
     </div>
   );
 };
