@@ -23,10 +23,8 @@ export default function Company() {
    {
       isLoading ?  <Loader></Loader> : 
       <div>
-        <main>
         <Hero></Hero>
         <Content></Content>
-        </main>
       </div>
     }
    </>

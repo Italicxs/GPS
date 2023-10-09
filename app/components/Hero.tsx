@@ -28,15 +28,12 @@ export default function Hero() {
   useEffect(() => { setIsClient(true) }, [])  
   
   return (
-    <div className="relative min-h-[900px]">
+    <div>
       { isClient &&
       <video
         src="/hero-bg.webm"
         autoPlay
         loop
-        muted
-        playsInline 
-        className="absolute inset-0 object-cover w-full h-full"
       > 
       </video>}
       <div className="absolute inset-0 flex items-center justify-center">

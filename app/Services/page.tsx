@@ -1,6 +1,7 @@
 "use client"
 import { useState, useEffect } from 'react'
 import Loader from '../components/Loader';
+
 import Analysis from "./Analysis";
 import Cards from "./Cards";
 import Cards2 from "./Cards2";
@@ -12,7 +13,7 @@ import Mainteinance from "./Mainteinance";
 import Plans from "./Plans";
 
 export default function Services(){
-
+  
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -32,7 +33,6 @@ export default function Services(){
       {
          isLoading ?  <Loader></Loader> : 
          <div>
-             <main>
            <Hero></Hero>
            <Cards></Cards>
            <Cards2></Cards2>
@@ -54,7 +54,6 @@ export default function Services(){
            <div id="Install">
            <Installation></Installation>
            </div>
-          </main>
          </div>
        }
       </>

@@ -24,11 +24,9 @@ export default function Company(){
      {
         isLoading ?  <Loader></Loader> : 
         <div>
-          <main>
         <Hero></Hero>
         <Content></Content>
         <ContactForm></ContactForm>
-          </main>
         </div>
       }
      </>

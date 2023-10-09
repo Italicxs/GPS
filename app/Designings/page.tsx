@@ -23,10 +23,8 @@ export default function Designings() {
    {
       isLoading ?  <Loader></Loader> : 
       <div>
-        <main>
         <Hero></Hero>
         <Content></Content>
-        </main>
       </div>
     }
    </>
